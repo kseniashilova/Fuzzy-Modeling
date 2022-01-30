@@ -30,8 +30,8 @@ The number of triangles of a graph gives the information about possible clusteri
 The eigenvalues of adjacency matrices strongly correspond to the local and global properties of the network such as degree, clustering coeficient and so on. Eigenvalues provides global and comlex comparing characteristic of a graph.  
 ##### 3.7 PageRanks
 The PageRank vector illustrate importance of nodes. This parameter reflects the probability to be in the node after random walk.  
-##### 3.8 ![Geometry score](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/Geometry%20Score%20A%20Method%20For%20Comparing%20Generative%20Adversarial%20Networks.pdf)
-## 4. Estimation to linguistic variables
+##### 3.8 [Geometry score](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/Geometry%20Score%20A%20Method%20For%20Comparing%20Generative%20Adversarial%20Networks.pdf)
+## 4. Estimations to linguistic variables
 Как перевести измеренные характеристики в лингвистические переменные
 ## 5. Коэффициенты для каждого метода - в зависимости от того, что больше нужно (топологические, метрические характеристики и тд)  
 Как в общем виде представить, какие характеристики более важные, то есть ввести коэффициенты в общем виде (альфа, бета и тд)
