@@ -7,7 +7,20 @@
 ## 2. Basic definitions 
 Про определения, каоторые используются
 ## 3. Estimated parameters  
-Какие характеристики у графов будем измерять. Перечислить все и описать их
+### 3.1 Edge dencity
+### 3.2 F1  
+```LaTeX
+F_1(x)=P(i~j,d_{i,j}<x)
+```
+### 3.3 F2  
+```LaTeX
+F_2(x)=P(d_{i,j}<x)
+```
+### 3.4 Maximum degree
+### 3.5 Number of triangles and closed 4-walks
+### 3.6 Eigenvalues
+### 3.7 Centrality measures
+### 3.8 ![Geometry score](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/Geometry%20Score%20A%20Method%20For%20Comparing%20Generative%20Adversarial%20Networks.pdf)
 ## 4. Estimation to linguistic variables
 Как перевести измеренные характеристики в лингвистические переменные
 ## 5. Коэффициенты для каждого метода - в зависимости от того, что больше нужно (топологические, метрические характеристики и тд)  
