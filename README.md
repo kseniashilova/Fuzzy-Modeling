@@ -7,29 +7,34 @@
 ## 2. Basic definitions 
 Про определения, каоторые используются
 ## 3. Estimated parameters 
-G = (V,E)  
+To compare two graphs we provide some characteristics that can be computed on the graphs. There are parameters that are related to topological structure of a graph, that is they do not depend on weights of the edges. The main parameters independent of distances are edge density, degrees vector, maximum degree, number of triangles, clasterization coefficient and page rank vector.  The characteristic that provides some information about distances between nodes are so-called F1 and F2 functions (functions that gives a joint probability that two vertices are adjacent and within a certain distance from each other and that two vertices are within a certain distance from each other), and moreover the eigenvalues of adjacency matrix. Besides, we can compute the weights distribution as the parameter that is not such global and complex.
 ##### 3.1 Edge density  
 The parameter called an edge density illustrates the density of a graph G, that is the maximum number of edges (full graph) is equal to $ n(n-1)/2$, where n - number of vertices. Therefore, edge density $ \epsilon = 2 |E| / (n(n-1)) $. This parameter reflects general structure of a graph and do not depends on the weight of edges.  
-##### 3.2 $F_1$  
+##### 3.2 Degrees vector
+A vector of intensities $\overline{p}$ is a vector with the length n (number of nodes) and each of coordinates gives the degree of the corresponding node. Degrees distribution is an extremelly important parameter that allow to build integrated estimation of a graph including edge dencity, is it appropriate to use a geometric component or not (that is a vertex with a higher degree is more likely to connect to a new vertex) and others.  
+##### 3.3 Maximum degree
+The parameter called maximum degree shows the degree of node with the maximum number of the adjacent ones.  
+##### 3.4 Number of triangles, clasterization coefficient
+The number of triangles of a graph gives the information about possible clusterization process, that shows a general structure of a network. Clusters are particularly significant object related to connectomes, since connectomes can be divided into the large regions with the neurons which have similar functions.  
+##### 3.5 PageRanks
+The PageRank vector illustrate importance of nodes. This parameter reflects the probability to be in the node after random walk.  ПОДОБНЕЕЕ
+##### 3.6 $F_1$  
 ```LaTeX
 F_1(x)=P(i~j,d_{i,j}<x)
 ```
 $F_1$ is a function that gives a joint probability that two vertices are adjacent and within a certain distance from each other.
-##### 3.3 $F_2$  
+##### 3.7 $F_2$  
 ```LaTeX
 F_2(x)=P(d_{i,j}<x)
 ```
 $F_2$ is a function that gives a probability that two vertices are within a certain distance from each other.
-##### 3.4 Degrees vector
-A vector of intensities $\overline{p}$ is a vector with the length n (number of nodes) and each of coordinates gives the degree of the corresponding node. Degrees distribution is an extremelly important parameter that allow to build integrated estimation of a graph including edge dencity, is it appropriate to use a geometric component or not (that is a vertex with a higher degree is more likely to connect to a new vertex) and others.  
-##### 3.4 Maximum degree
-The parameter called maximum degree shows the degree of node with the maximum number of the adjacent ones.  
-##### 3.5 Number of triangles, clasterization coefficient
-The number of triangles of a graph gives the information about possible clusterization process, that shows a general structure of a network. Clusters are particularly significant object related to connectomes, since connectomes can be divided into the large regions with the neurons which have similar functions.  
-##### 3.6 Eigenvalues
+##### 3.8 Eigenvalues
 The eigenvalues of adjacency matrices strongly correspond to the local and global properties of the network such as degree, clustering coeficient and so on. Eigenvalues provides global and comlex comparing characteristic of a graph.  
-##### 3.7 PageRanks
-The PageRank vector illustrate importance of nodes. This parameter reflects the probability to be in the node after random walk.  
+##### 3.9 Weights vector
+The vector of weights of the graph edges can illustrate the maximum, minimum, the most frequent and so on number from the set of the weights, distances between teo nodes.      
+
+  
+    
 ## 4. Estimations to linguistic variables
 To construct the fuzzy model it is nessesary to define the correspondence of the computational estimate and the linguistic variable. All of metrics, that is presented in the section 3, can be used to demonstrate the relative error of the approximation of other graph. That is we compare two graphs, however one of them is reference. Consequently, the linguistic variables indicate the quality of the graph approximation estimated by certain parameter. This is an open question, how to define the number of the linguistic variables, nevertheless in this paper we consider 7 variables as an optimal number providing sufficient accuracy. The linguistic variables is the set of variables defined as 
 {the similarity is extremely high, the similarity is very high, the similarity is high, the similarity is medium, the similarity is low, the similarity is very low, the similarity is extremely low}.   
@@ -48,8 +53,8 @@ To make a reasonable assumptions, we put that
  
 *******НАРИСОВАТЬ ГРАФИК    
 
-## 5. Коэффициенты для каждого метода - в зависимости от того, что больше нужно (топологические, метрические характеристики и тд)  
-Как в общем виде представить, какие характеристики более важные, то есть ввести коэффициенты в общем виде (альфа, бета и тд)
+## 5. Degrees of importance
+
 ## 6. Description of algorithms  
 Описать какие алгоритмы существуют для генерации графа, приближенного к коннектому
 ## 7. Results of experiment
