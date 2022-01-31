@@ -66,7 +66,7 @@ The Barabasi-Albert model of generating a random graph get as an initial value N
 ##### 6.4 Chung Lu model
 The Chung-Lu model required as an input the vector of expected degrees of the nodes. Then each node is assigned a weight from this vector and the two selected nodel get a connection edge with the probability proportional to the product of their weights, namely, is equal to the product of weights divided by the sum of the vector elements.  
 ##### 6.5 Geometric Chung Lu model  
-The Geometric Chung Lu model illustrate how to combine the random geometic graph model and the Chung Lu model. The input of the model is the number of nodes, the vector of expected degrees of the nodes and the $F_1$ function described in the section 3.  
+The Geometric Chung Lu model illustrate how to combine the random geometic graph model and the Chung Lu model. The input of the model is the number of nodes, the vector of expected degrees of the nodes and the function that shows how the probabilty to be connected of two nodes defined with distance term and the weights vector. The process of the graph building: points are placed independently and randomly in the space, then they are assosiated to the element of the nodes weihts vector. Then the probability of existing connections for two vertex can be calculated from the input function.  
 ## 7. Results of experiment
 Какая модель оказалась лучшей? совпадает ли это с ожиданиями?
 ## 8. Conclusion
