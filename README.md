@@ -6,7 +6,7 @@ Models definning and the experement: https://colab.research.google.com/drive/1R3
 ## 1. Introduction  
 Описание проблемы, что получено и что исследовано до меня, кто интересовался и что сделал уже. Почему в целом нечеткое моделирование может помочь. 
 ## 2. Basic definitions 
-Про определения, каоторые используются
+Про определения, которые используются
 ## 3. Estimated parameters 
 To compare two graphs we provide some characteristics that can be computed on the graphs. There are parameters that are related to topological structure of a graph, that is they do not depend on weights of the edges. The main parameters independent of distances are edge density, degrees vector, maximum degree, number of triangles, clasterization coefficient and page rank vector.  The characteristic that provides some information about distances between nodes are so-called F1 and F2 functions (functions that gives a joint probability that two vertices are adjacent and within a certain distance from each other and that two vertices are within a certain distance from each other), and moreover the eigenvalues of adjacency matrix. Besides, we can compute the weights distribution as the parameter that is not such global and complex.
 ##### 3.1 Edge density  
@@ -62,7 +62,7 @@ The Erdos-Renyi model of generating a random graph has the input of the number o
 ##### 6.2 Geometric model
 The random geometic graph is the concept of N randomly distributed nodes in a space, where each two node is adjacent if the distance between them do to exceed some given treshold. The input of model is N (number of nodes) and t (treshold value).  
 ##### 6.3 Barabasi-Albert model
-The Barabasi-Albert model of generating a random graph get as an initial value N (number of nodes). Then, randomly selected M (M < N) nodes are placed in a space and each new node becomes connected with nodes, besides the probability to be connected with a vertex is proportional to degree of this vertex. It is the concept called "the rich get richer".  
+The Barabasi-Albert model of generating a random graph get as an initial value N (number of nodes). Then, the selected M (M >= 2 and M < N, usually M = 2) nodes are placed in a space and each new node becomes connected with M existed nodes, besides the probability to be connected with a vertex is proportional to degree of this vertex and equal to the degree divided by the sum of degrees. It is the concept called "the rich get richer".  
 ##### 6.4 Chung Lu model
 The Chung-Lu model required as an input the vector of expected degrees of the nodes. Then each node is assigned a weight from this vector and the two selected nodel get a connection edge with the probability proportional to the product of their weights, namely, is equal to the product of weights divided by the sum of the vector elements.  
 ##### 6.5 Geometric Chung Lu model  
