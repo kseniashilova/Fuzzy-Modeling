@@ -58,13 +58,13 @@ To make a reasonable assumptions, we put that
 ## 6. Description of algorithms  
 ##### 6.1 Erdos-Renyi model
 The Erdos-Renyi model of generating a random graph has the input of the number of nodes and the edge density. Then, the points are randomly placed in a space and the probability that the two choosen nodes have an edge is equal to the edge density.  
-##### 6.1 Geometric model
+##### 6.2 Geometric model
 The random geometic graph is the concept of N randomly distributed nodes in a space, where each two node is adjacent if the distance between them do to exceed some given treshold. The input of model is N (number of nodes) and t (treshold value).  
-##### 6.1 Barabasi-Albert model
-The Barabasi-Albert model of generating a random graph get as an initial value N (number of nodes). Then, randomly selected M (M < N) nodes are placed in a space and each new node becomes connected with nodes, besides the probability to be connected with a vertex is proportional to degree of this vertex. It is the concept calles "the rich get richer".  
-##### 6.1 Chung Lu model
+##### 6.3 Barabasi-Albert model
+The Barabasi-Albert model of generating a random graph get as an initial value N (number of nodes). Then, randomly selected M (M < N) nodes are placed in a space and each new node becomes connected with nodes, besides the probability to be connected with a vertex is proportional to degree of this vertex. It is the concept called "the rich get richer".  
+##### 6.4 Chung Lu model
 The Chung-Lu model required as an input the vector of expected degrees of the nodes. Then each node is assigned a weight from this vector and the two selected nodel get a connection edge with the probability proportional to the product of their weights, namely, is equal to the product of weights divided by the sum of the vector elements.  
-##### 6.1 Geometric Chung Lu model  
+##### 6.5 Geometric Chung Lu model  
 The Geometric Chung Lu model illustrate how to combine the random geometic graph model and the Chung Lu model. The input of the model is the number of nodes, the vector of expected degrees of the nodes and the $F_1$ function described in the section 3.  
 ## 7. Results of experiment
 Какая модель оказалась лучшей? совпадает ли это с ожиданиями?
