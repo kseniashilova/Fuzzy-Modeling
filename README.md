@@ -19,19 +19,9 @@ A vector of intensities $\overline{p}$ is a vector with the length n (number of 
 The number of triangles of a graph gives the information about possible clusterization process, that shows a general structure of a network. Clusters are particularly significant object related to connectomes, since connectomes can be divided into the large regions with the neurons which have similar functions.  
 ##### 3.5 PageRanks
 The PageRank vector illustrate importance of nodes. This parameter reflects the probability to be in the node after random walk.  ПОДОБНЕЕЕ
-##### 3.6 $F_1$  
-```LaTeX
-F_1(x)=P(i~j,d_{i,j}<x)
-```
-$F_1$ is a function that gives a joint probability that two vertices are adjacent and within a certain distance from each other.
-##### 3.7 $F_2$  
-```LaTeX
-F_2(x)=P(d_{i,j}<x)
-```
-$F_2$ is a function that gives a probability that two vertices are within a certain distance from each other.
-##### 3.8 Eigenvalues
+##### 3.6 Eigenvalues
 The eigenvalues of adjacency matrices strongly correspond to the local and global properties of the network such as degree, clustering coeficient and so on. Eigenvalues provides global and comlex comparing characteristic of a graph.  
-##### 3.9 Weights vector
+##### 3.7 Weights vector
 The vector of weights of the graph edges can illustrate the maximum, minimum, the most frequent and so on number from the set of the weights, distances between teo nodes.      
 
   
