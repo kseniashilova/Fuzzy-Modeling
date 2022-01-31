@@ -1,5 +1,6 @@
 # Fuzzy-Modeling
 
+Models definning and the experement: https://colab.research.google.com/drive/1R3xN1R1r6LasQB-Jk4K58Qilx7fRQqJ1?usp=sharing
 ## Abstract  
 В целом, почему проблема важна и что делается в статье (что оцениваются параметры как с точки зрения метрических характеристик, так и топологические и тд...), что исследуется множество возможных моделей генерации графа, чтобы приблизить граф структурного коннектома.
 ## 1. Introduction  
