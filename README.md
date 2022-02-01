@@ -56,7 +56,14 @@ The Barabasi-Albert model of generating a random graph get as an initial value N
 The Chung-Lu model required as an input the vector of expected degrees of the nodes. Then each node is assigned a weight from this vector and the two selected nodel get a connection edge with the probability proportional to the product of their weights, namely, is equal to the product of weights divided by the sum of the weights vector elements.  
 ##### 6.5 Simple Geometric Chung Lu model  
 The Simple Geometric Chung Lu model illustrate how to combine the random geometic graph model and the Chung Lu model. The input of the model is the vector of expected degrees of the nodes. The process of the graph building: points are placed independently and randomly in the space, then they are assosiated to the element of the nodes weihts vector. Then, the probability of the existing connection between two nodes can be calculated as the product of the weights divided by the sum of the weights vector elements normalized by the distance between them.  
-## 7. Results of experiment
-Какая модель оказалась лучшей? совпадает ли это с ожиданиями?
+## 7. Experiment
+The five different models mentioned above was considered during the experement. To start with the model generated a graph was described with python code, as well as the calculation of parameters for estimating.  Then, the relative error of each approximation was calculated and fixed. There were 100 iterations of the random graph construction, which were averaged. As the main result obtained by this step, it can be considered a vector of 8 averaged estimated relative errors (for each parameter) for all generation models.  
+| Model\Similarity   | edge density   | connected components | degrees vector | triangles | clustering coeff | PageRank vector | eigenvalues| weights|
+|--------------------|----------------|----------------------|----------------|-----------|------------------|-----------------|------------|--------|
+| Erdos-Renyi        |       0.03     |        0.5           |     0.47       |   0.85    |      0.67        |       0.19      |    11.09   | 11.05  |
+| Geometric          |       0.75     |        3.48          |     0.81       |   0.97    |      0.13        |       0.14      |    0.45    | 1.72   |
+| Barabasi-Albert    |       0.7      |        0.5           |     0.73       |   0.99    |      0.65        |       0.54      |    5.55    | 10.47  |
+| Chung Lu           |       0.07     |        0.49          |     0.09       |   0.33    |      0.11        |       0.3       |    10.89   | 11.04  |
+| Geometric Chung Lu |       0.65     |        0.5           |     0.57       |   1.33    |      0.39        |       0.26      |    12.38   | 10.15  |
 ## 8. Conclusion
 ## References 
