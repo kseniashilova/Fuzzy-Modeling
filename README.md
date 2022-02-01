@@ -41,7 +41,7 @@ To make a assumptions, we put that
 * {the similarity is very low} has the core of 0.8 and the support from 0.6 to 1 
 * {the similarity is extremely low} has the core of the segment [1; 15] and the support from 0.8 to 15. (the only trapezoidal membership function that illustrate that all of a quite large relative errors demonstrate the extremely low similarity)  
  
-*******НАРИСОВАТЬ ГРАФИК    
+![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/membership_finctions.png)   
 
 ## 5. Degrees of importance
 
