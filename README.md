@@ -26,21 +26,20 @@ The vector of weights of the graph edges can illustrate the maximum, minimum, th
 
   
     
-## 4. Estimations to linguistic variables
-To construct the fuzzy model it is nessesary to define the correspondence of the computational estimate and the linguistic variable. All of metrics, that is presented in the section 3, can be used to demonstrate the relative error of the approximation of other graph. That is we compare two graphs, however one of them is reference. Consequently, the linguistic variables indicate the quality of the graph approximation estimated by certain parameter. This is an open question, how to define the number of the linguistic variables, nevertheless in this paper we consider 7 variables as an optimal number providing sufficient accuracy. The linguistic variables is the set of variables defined as 
-{the similarity is extremely high, the similarity is very high, the similarity is high, the similarity is medium, the similarity is low, the similarity is very low, the similarity is extremely low}.   
-As a membership function, it is convenient to define a piecewise‐defined function triangular function for each linguistic variable. 
+## 4. Estimations to linguistic labels
+To construct the fuzzy model it is nessesary to define the correspondence of the computational estimate and the linguistic label. All of metrics, that is presented in the section 3, can be used to demonstrate the relative error of the approximation of other graph. That is we compare two graphs, however one of them is reference. Consequently, the linguistic variable indicate the quality of the graph approximation estimated by certain parameter. This is an open question, how to define the number of the linguistic terms, nevertheless in this paper we consider 7 labels as an optimal number providing sufficient accuracy. The set of labels is defined as {the similarity is extremely high, the similarity is very high, the similarity is high, the similarity is medium, the similarity is low, the similarity is very low, the similarity is extremely low}.   
+As a membership function, it is convenient to define a piecewise‐defined function triangular function for each linguistic term. In this case, trapezoidal membership functions is the unnecessary complication of charts, because there are enough linguistic labels to get the result. 
 *******ФУНКЦИЯ В ОБЩЕМ ВИДЕ  
   
-In fact, the relative error is measured in percentage terms. Then it is mandatory to define all linguistic terms corresponding to the linguistic variables on the segment from 0% to 300% (the relative error).    
-To make a reasonable assumptions, we put that  
+In fact, the relative error is measured as a float number. Then it is mandatory to define all linguistic terms corresponding to the linguistic labels on the segment from 0 to 15 (because the experements did not give the greater result for an error).    
+To make a assumptions, we put that  
 * {the similarity is extremely high} has the core of 0 and the support from 0 to 0.2
-* {the similarity is very high} has the core of 0.2 and the support from 0.1 to 0.
-* {the similarity is high} has the core of 0.4 and the support from  
-* {the similarity is medium} has the core of 0.5 and the support from  
-* {the similarity is low} has the core of 0.6 and the support from   
-* {the similarity is very low} has the core of 0.7 and the support from 
-* {the similarity is extremely low} has the core of 0.9 and the support from   
+* {the similarity is very high} has the core of 0.2 and the support from 0 to 0.4  
+* {the similarity is high} has the core of 0.4 and the support from 0.2 to 0.6  
+* {the similarity is medium} has the core of 0.5 and the support from 0.3 to 0.7  
+* {the similarity is low} has the core of 0.6 and the support from 0.4 to 0.8  
+* {the similarity is very low} has the core of 0.8 and the support from 0.6 to 1 
+* {the similarity is extremely low} has the core of the segment [1; 15] and the support from 0.8 to 15. (the only trapezoidal membership function that illustrate that all of a quite large relative errors demonstrate the extremely low similarity)  
  
 *******НАРИСОВАТЬ ГРАФИК    
 
