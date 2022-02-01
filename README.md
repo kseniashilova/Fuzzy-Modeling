@@ -43,8 +43,6 @@ To make a assumptions, we put that
  
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/membership_finctions.png)   
 
-## 5. Degrees of importance
-
 ## 6. Description of algorithms  
 ##### 6.1 Erdos-Renyi model
 The Erdos-Renyi model of generating a random graph has the input of the number of nodes and the edge density. Then, the points are randomly placed in a space and the probability that the two choosen nodes have an edge is equal to the edge density.  
@@ -65,5 +63,27 @@ The five different models mentioned above was considered during the experement. 
 | Barabasi-Albert    |       0.7      |        0.5           |     0.73       |   0.99    |      0.65        |       0.54      |    5.55    | 10.47  |
 | Chung Lu           |       0.07     |        0.49          |     0.09       |   0.33    |      0.11        |       0.3       |    10.89   | 11.04  |
 | Geometric Chung Lu |       0.65     |        0.5           |     0.57       |   1.33    |      0.39        |       0.26      |    12.38   | 10.15  |
+
+  
+   
+Then, let us consider each model separately. The problem is to estimate the model according to eight pre-prepared criteria. To get the enough correct result it is needed to determine the system of rules. The linguistic label for output estimation are the same as for the input ones.  
+##### R1:  
+IF edge density has "extremelly high similarity" AND number of connected components has "extremelly high similarity" AND degrees vector has "extremelly high similarity" AND number of triangles has "extremelly high similarity" AND clustering has "extremelly high similarity" AND PageRank vector has "extremelly high similarity" AND eigenvalues have "extremelly high similarity" AND weights vector has "extremelly high similarity" THEN graphs have "extremelly high similarity".  
+That is, if all parameters define the similarity of tha graphs as "extremelly high", the similarity of graphs is "extremelly high".  
+      
+Similarly, in order not to indicate long rules, we will write them in 8-dimension matrix term, but we will understand a rule similar to the above.      
+That is, this matrix is a more complex analogy of a matrix describing 2 parameters:  
+| param1\param2   | extremely high   | very high    | high       | medium      | low        | very low     | extremely low  |
+|-----------------|------------------|--------------|------------|-------------|------------|--------------|----------------|
+| extremely high  |  extremely high  |extremely high|very high   |  high       | medium     |  medium      |   low          |
+| very high       |  extremely high  | very high    |very high   |  high       | medium     |   medium     |    low         |
+| high            |      very high   | very high    | high       |   high      | medium     |   low        |    low         |
+| medium          |       high       |  high        |  high      |  medium     |   medium   |    low       |    low         | 
+| low             |       medium     |  medium      |  medium    |  medium     |   low      |  low         |   very low     |
+| very low        |       medium     |  medium      |   low      |  low        |     low    |  very low    |extremely low   |
+| extremely  low  |     low          |   low        |    low     |  low        | very low   |extremely low |extremely low   |
+
+##### General Rule:  
+
 ## 8. Conclusion
 ## References 
