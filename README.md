@@ -82,10 +82,14 @@ IF similarity of any parameter is "extremely low" THEN graph similarity is "extr
     
 Then, let us consider each model separately using the Mamdani model.  
 #### 6.1 Erdos-Renyi model
-
+![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/erdos_renyi_res.png)
 #### 6.2 Geometric model
+![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/geometric_res.png)
 #### 6.3 Barabasi-Albert model 
+![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/barabasi_albert_res.png)
 #### 6.4 Chung Lu model 
+![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/chung_lu_res.png)
 ##### 6.5 Simple Geometric Chung Lu model  
+![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/geom_chung_lu_res.png)
 ## 7. Conclusion
 ## References 
