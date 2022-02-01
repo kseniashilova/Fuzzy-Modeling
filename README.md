@@ -24,9 +24,23 @@ The eigenvalues of adjacency matrices strongly correspond to the local and globa
 ##### 3.7 Weights vector
 The vector of weights of the graph edges can illustrate the maximum, minimum, the most frequent and so on number from the set of the weights, distances between teo nodes.      
 
+## 4. Degrees of importance
   
-    
-## 4. Estimations to linguistic labels
+  
+
+## 5. Description of algorithms  
+##### 5.1 Erdos-Renyi model
+The Erdos-Renyi model of generating a random graph has the input of the number of nodes and the edge density. Then, the points are randomly placed in a space and the probability that the two choosen nodes have an edge is equal to the edge density.  
+##### 5.2 Geometric model
+The random geometic graph is the concept of N randomly distributed nodes in a space, where each two node is adjacent if the distance between them do to exceed some given treshold. The input of model is N (number of nodes) and t (treshold value).  
+##### 5.3 Barabasi-Albert model
+The Barabasi-Albert model of generating a random graph get as an initial value N (number of nodes). Then, the selected M (M >= 2 and M < N, usually M = 2) nodes are placed in a space and each new node becomes connected with M existed nodes, besides the probability to be connected with a vertex is proportional to degree of this vertex and equal to the degree divided by the sum of degrees. It is the concept called "the rich get richer".  
+##### 5.4 Chung Lu model
+The Chung-Lu model required as an input the vector of expected degrees of the nodes. Then each node is assigned a weight from this vector and the two selected nodel get a connection edge with the probability proportional to the product of their weights, namely, is equal to the product of weights divided by the sum of the weights vector elements. 
+##### 5.5 Simple Geometric Chung Lu model  
+The Simple Geometric Chung Lu model illustrate how to combine the random geometic graph model and the Chung Lu model. The input of the model is the vector of expected degrees of the nodes. The process of the graph building: points are placed independently and randomly in the space, then they are assosiated to the element of the nodes weihts vector. Then, the probability of the existing connection between two nodes can be calculated as the product of the weights divided by the sum of the weights vector elements normalized by the distance between them.  
+   
+## 6. Estimations to linguistic labels
 To construct the fuzzy model it is nessesary to define the correspondence of the computational estimate and the linguistic label. All of metrics, that is presented in the section 3, can be used to demonstrate the relative error of the approximation of other graph. That is we compare two graphs, however one of them is reference. Consequently, the linguistic variable indicate the quality of the graph approximation estimated by certain parameter. This is an open question, how to define the number of the linguistic terms, nevertheless in this paper we consider 7 labels as an optimal number providing sufficient accuracy. The set of labels is defined as {the similarity is extremely high, the similarity is very high, the similarity is high, the similarity is medium, the similarity is low, the similarity is very low, the similarity is extremely low}.   
 As a membership function, it is convenient to define a piecewise‐defined function triangular function for each linguistic term. In this case, trapezoidal membership functions is the unnecessary complication of charts, because there are enough linguistic labels to get the result. 
 *******ФУНКЦИЯ В ОБЩЕМ ВИДЕ  
@@ -43,17 +57,6 @@ To make a assumptions, we put that
  
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/membership_finctions.png)   
 
-## 6. Description of algorithms  
-##### 6.1 Erdos-Renyi model
-The Erdos-Renyi model of generating a random graph has the input of the number of nodes and the edge density. Then, the points are randomly placed in a space and the probability that the two choosen nodes have an edge is equal to the edge density.  
-##### 6.2 Geometric model
-The random geometic graph is the concept of N randomly distributed nodes in a space, where each two node is adjacent if the distance between them do to exceed some given treshold. The input of model is N (number of nodes) and t (treshold value).  
-##### 6.3 Barabasi-Albert model
-The Barabasi-Albert model of generating a random graph get as an initial value N (number of nodes). Then, the selected M (M >= 2 and M < N, usually M = 2) nodes are placed in a space and each new node becomes connected with M existed nodes, besides the probability to be connected with a vertex is proportional to degree of this vertex and equal to the degree divided by the sum of degrees. It is the concept called "the rich get richer".  
-##### 6.4 Chung Lu model
-The Chung-Lu model required as an input the vector of expected degrees of the nodes. Then each node is assigned a weight from this vector and the two selected nodel get a connection edge with the probability proportional to the product of their weights, namely, is equal to the product of weights divided by the sum of the weights vector elements.  
-##### 6.5 Simple Geometric Chung Lu model  
-The Simple Geometric Chung Lu model illustrate how to combine the random geometic graph model and the Chung Lu model. The input of the model is the vector of expected degrees of the nodes. The process of the graph building: points are placed independently and randomly in the space, then they are assosiated to the element of the nodes weihts vector. Then, the probability of the existing connection between two nodes can be calculated as the product of the weights divided by the sum of the weights vector elements normalized by the distance between them.  
 ## 7. Experiment
 The five different models mentioned above was considered during the experement. To start with the model generated a graph was described with python code, as well as the calculation of parameters for estimating.  Then, the relative error of each approximation was calculated and fixed. There were 100 iterations of the random graph construction, which were averaged. As the main result obtained by this step, it can be considered a vector of 8 averaged estimated relative errors (for each parameter) for all generation models.  
 | Model\Similarity   | edge density   | connected components | degrees vector | triangles | clustering coeff | PageRank vector | eigenvalues| weights|
@@ -75,15 +78,16 @@ Similarly, in order not to indicate long rules, we will write them in 8-dimensio
 That is, this matrix is a more complex analogy of a matrix describing 2 parameters:  
 | param1\param2   | extremely high   | very high    | high       | medium      | low        | very low     | extremely low  |
 |-----------------|------------------|--------------|------------|-------------|------------|--------------|----------------|
-| extremely high  |  extremely high  |extremely high|very high   |  high       | medium     |  medium      |   low          |
-| very high       |  extremely high  | very high    |very high   |  high       | medium     |   medium     |    low         |
-| high            |      very high   | very high    | high       |   high      | medium     |   low        |    low         |
-| medium          |       high       |  high        |  high      |  medium     |   medium   |    low       |    low         | 
-| low             |       medium     |  medium      |  medium    |  medium     |   low      |  low         |   very low     |
-| very low        |       medium     |  medium      |   low      |  low        |     low    |  very low    |extremely low   |
-| extremely  low  |     low          |   low        |    low     |  low        | very low   |extremely low |extremely low   |
+| extremely high  |  extremely high  |extremely high|very high   |very high    | high       |  high        |   medium       |
+| very high       |  extremely high  | very high    |very high   |  high       | high       |   medium     |    medium      |
+| high            |      very high   | very high    | high       |   high      | medium     |   medium     |    low         |
+| medium          |   very high      |  high        |  high      |  medium     |   medium   |    low       |    low         | 
+| low             |       high       |  high        |  medium    |  medium     |   low      |  low         |   very low     |
+| very low        |       high       |  medium      |   medium   |  low        |     low    |  very low    |  very low      |
+| extremely  low  |     medium       |   medium     |    low     |  low        | very low   |very low      |extremely low   |
 
 ##### General Rule:  
+Put the assotiations set {1, 2, 3, 4, 5, 6, 7} to set  {extremely high, very high, high, medium, low, very low, extremely low}. Then IF weighted (by importance degrees) rounded average of 8 parameter estimations is equal to x from {1, 2, 3, 4, 5, 6, 7}, THEN the output is the label assosiated with x.   
 
 ## 8. Conclusion
 ## References 
