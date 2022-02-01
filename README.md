@@ -34,8 +34,8 @@ As a membership function, it is convenient to define a piecewise‐defined funct
   
 In fact, the relative error is measured in percentage terms. Then it is mandatory to define all linguistic terms corresponding to the linguistic variables on the segment from 0% to 300% (the relative error).    
 To make a reasonable assumptions, we put that  
-* {the similarity is extremely high} has the core of 0.1 and the support from  
-* {the similarity is very high} has the core of 0.3 and the support from 
+* {the similarity is extremely high} has the core of 0 and the support from 0 to 0.2
+* {the similarity is very high} has the core of 0.2 and the support from 0.1 to 0.
 * {the similarity is high} has the core of 0.4 and the support from  
 * {the similarity is medium} has the core of 0.5 and the support from  
 * {the similarity is low} has the core of 0.6 and the support from   
