@@ -2,7 +2,7 @@
 
 Models definning and the experement: https://colab.research.google.com/drive/1R3xN1R1r6LasQB-Jk4K58Qilx7fRQqJ1?usp=sharing
 ## Abstract  
-В целом, почему проблема важна и что делается в статье (что оцениваются параметры как с точки зрения метрических характеристик, так и топологические и тд...), что исследуется множество возможных моделей генерации графа, чтобы приблизить граф структурного коннектома.
+Approximation of graphs obtained from real life is a very acute problem that can be solved by some models of random graph generation based on some pre-known properties. One of the most essential biological graphs is the structural connectome of the drosophila fly, namely its visual part. In this paper, we consider some models for generating random graphs based on the properties of a structural connectome. Then the models are compared to the reference graph according to some parameters, which makes it possible to identify the most suitable of them. In the future, the parameters for evaluation can be changed depending on the interest of researchers, but the approach using fuzzy logic allows to evaluate the graph generation model as close as possible to the graph of the structural connectome. 
 ## 1. Introduction  
 Modeling and approximation of graphs obtained from real life is a huge problem for the science of our time, when complex biological graphs began to appear. A graph of the structural connectome of the drosophila fly has recently been published. The graph was obtained using layer-by-layer microscopy and the detection of the components of neurons and the connections between them using machine learning methods [1]. Janelia Research Campus and their project FlyEm is the latest and precise developments of the structural connectome. The presence of a structural connectome of such a complex insect as the drosophila fly helps to explore various properties of the brain and try to find dependencies. The geometric properties of the graph structure can greatly help to describe the structure of neurons and synapses, which is necessary in the study of various neuron systems, such as the visual system. The drosophila fly has a well-studied visual system, and understanding the work of neurons will demonstrate patterns common to many creatures.  
 The visual system of the drosophila fly consists of few parts, neuropiles, called retina, lamina, medulla, lobula and lobula plate. Medulla is the first neuropile where motion is detected in the visual area of a fruit fly. That is why the study of the medulla region is critically significant for understanding the work of the visual system. Many structural properties of this region have already been studied, which makes it possible to generate random models based on them and compare their dynamic functioning or static structure with the connectome reference graph. This will make it possible to distinguish a random component from a pattern in the process of transmitting a nerve impulse.  
@@ -10,7 +10,11 @@ There are a lot of models for generating a random graph based on some of its pre
 Fuzzy logic allows to evaluate models by some pre-selected parameters and make an aggregated assessment of the model in comparison with the connectome reference graph. On the one hand, fuzzy approach will simplify the decision-making process, which model should be used to compare the dynamic and static properties of a connectome to a random graph. On the other hand, the estimate obtained as a result of using fuzzy logic will be sufficiently aggregated and will take into account many indicators that seem important to the researcher.  
 In this paper, section 2 presents tha basic definition related to fuzzy systems used as the tools of the research. Section 3 describes the parameters for estimating the similarity of graphs, as well as section 4 illestrate the concept of generating random graphs of different considered models, that were mentioned above. Section 5 provide some information about obtaining the structural connetone of drosophila medulla, that is the reference graph. Sections 6 and 7 illustrate how the experement was conducted by applying fuzzy logic. Conclusions and our expectations are proveded in section 8.  
 ## 2. Basic definitions 
-Про определения, которые используются
+#### Definition 1. Linguistic  variable [3] 
+#### Definition 1. Triangular membership function [2]
+#### Definition 2. System of rules [4]
+#### Definition 3. Mamdani algorithm [5]
+#### Definition 4. Deffuzification 
 ## 3. Estimated parameters 
 To compare two graphs we provide some characteristics that can be computed on the graphs. There are parameters that are related to topological structure of a graph, that is they do not depend on weights of the edges. The main parameters independent of distances are edge density, degrees vector, maximum degree, number of triangles, clasterization coefficient and page rank vector.  The characteristic that provides some information about distances between nodes are so-called F1 and F2 functions (functions that gives a joint probability that two vertices are adjacent and within a certain distance from each other and that two vertices are within a certain distance from each other), and moreover the eigenvalues of adjacency matrix. Besides, we can compute the weights distribution as the parameter that is not such global and complex.
 ##### 3.1 Edge density  
@@ -44,9 +48,11 @@ The Chung-Lu model required as an input the vector of expected degrees of the no
 The Simple Geometric Chung Lu model illustrate how to combine the random geometic graph model and the Chung Lu model. The input of the model is the vector of expected degrees of the nodes. The process of the graph building: points are placed independently and randomly in the space, then they are assosiated to the element of the nodes weihts vector. Then, the probability of the existing connection between two nodes can be calculated as the product of the weights divided by the sum of the weights vector elements normalized by the distance between them.  
 
 ## 5. Drosophila Medulla connectome
+The reference graph of the structural drosophila medulla connectome was obtained by the python acces to "neuPrint" project [6]. It was decided to approximate the positions of the neurons by finding the average coordinates of all synapses associated with the neuron. This approximation provides sufficient accuracy, but nevertheless there is no reason to believe that the position of the neuron is reliable. In addition, the graph involves synapses located in adjacent regions of the regions of the visual system.  This allows you to design the Medulla region and its connections with other regions as accurately as possible.  
+
 ## 6. Estimations to linguistic labels
 To construct the fuzzy model it is nessesary to define the correspondence of the computational estimate and the linguistic label. All of metrics, that is presented in the section 3, can be used to demonstrate the relative error of the approximation of other graph. That is we compare two graphs, however one of them is reference. Consequently, the linguistic variable indicate the quality of the graph approximation estimated by certain parameter. This is an open question, how to define the number of the linguistic terms, nevertheless in this paper we consider 7 labels as an optimal number providing sufficient accuracy. The set of labels is defined as {the similarity is extremely high, the similarity is very high, the similarity is high, the similarity is medium, the similarity is low, the similarity is very low, the similarity is extremely low}.   
-As a membership function, it is convenient to define a piecewise‐defined function triangular function for each linguistic term. In this case, trapezoidal membership functions is the unnecessary complication of charts, because there are enough linguistic labels to get the result. 
+As a membership function, it is convenient to define a piecewise‐defined triangular function for each linguistic term. In this case, trapezoidal membership functions is the unnecessary complication of charts, because there are enough linguistic labels to get the result. 
 *******ФУНКЦИЯ В ОБЩЕМ ВИДЕ  
   
 In fact, the relative error is measured as a float number. Then it is mandatory to define all linguistic terms corresponding to the linguistic labels on the segment from 0 to 15 (because the experements did not give the greater result for an error).    
@@ -57,7 +63,7 @@ To make a assumptions, we put that
 * {the similarity is medium} has the core of 0.5 and the support from 0.3 to 0.7  
 * {the similarity is low} has the core of 0.6 and the support from 0.4 to 0.8  
 * {the similarity is very low} has the core of 0.8 and the support from 0.6 to 1 
-* {the similarity is extremely low} has the core of the segment [1; 15] and the support from 0.8 to 15. (the only trapezoidal membership function that illustrate that all of a quite large relative errors demonstrate the extremely low similarity)  
+* {the similarity is extremely low} has the core of the segment [1; +inf] and the support from 0.8 to +inf. (the only trapezoidal membership function that illustrate that all of a quite large relative errors demonstrate the extremely low similarity. In the following steps, all parameters greater than 1 will be equated to 1, that is it will be the triangular function.)
  
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/membership_finctions.png)   
 
@@ -111,3 +117,13 @@ The structural connectomes and other natural graphs is an extremely significant 
 Talking about the expectations of the results, it was clear that the Chang Lu and Geometric Chang Lu models would struggle with each other. This was expected, because the models have repeatedly shown their superiority for generating graphs close to real ones. Generally speaking, it has been shown that the distance between nodes affects the weaking of the probability of an edge appearing between them, but for some reason geometric graphs with this property turned out to be slightly worse than the simple Chang Lu model. It is possible that if only topological characteristics were evaluated, the geometric graph would have proved itself, but in the case of complex estimates, this did not occur. Erdos-Renyi and Barabasi-Albert fulfilled expectations and were not precise enough. 
 ## References 
 [1] https://www.janelia.org/project-team/flyem/hemibrain
+[2]. Bingyi K., Daijun W., Li Y., Deng Y., 2012. A Method of Converting Z-Number to
+Classical Fuzzy Number. Journal of Information & Computational Science, 9, #3, 703–
+709.  
+[3]. Zadeh L.A., 1975. The Concept of a Linguistic Variable and Its Application to
+Approximate Reasoning - I. Information Sciences, vol. 8, no. 3, 199–249.  
+[4] Zadeh L.A., 1992. Fuzzy Logic and the Calculus of Fuzzy If-Then Rules. Proc. 22nd
+Intl. Symp. on Multiple-Valued Logic, Los Alamitos, CA: IEEE Computer Society
+Press, 480–480.
+[5] A Mamdani Type Fuzzy Logic Controller. Ion Iancu
+[6] https://neuprint.janelia.org/results?dataset=hemibrain%3Av1.2&qt=findneurons&tab=0&q=1&ftab=
