@@ -80,21 +80,28 @@ IF similarity of any parameter is "very low" THEN graph similarity is "very low"
 IF similarity of any parameter is "extremely low" THEN graph similarity is "extremely low".  
   
     
-Then, let us consider each model separately using the Mamdani model.  
+Then, let us provide the results for each model separately. Using the Mamdani model, it is nessecary to determine the system of rules, trat id what membership functions activate with the dependence of input estimation value. The max-min rule is applied. In other words, the minimum of membership functions degrees is chosen to be a potential the cut-off level of the activated output function. Then, the maximum of the minimums is projected on the output membership function to construct the output function. The next step is to deffuzificate the function using "Center of Area" method (COA).    
 #### 6.1 Erdos-Renyi model
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/erdos_renyi_res.png)
-![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/erdos_renyi_res_def.png)
+![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/erdos_renyi_res_def.png)  
+The crisp result is 0.61.  
 #### 6.2 Geometric model
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/geometric_res.png)
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/geometric_res_def.png)
+The crisp result is 0.56.  
 #### 6.3 Barabasi-Albert model 
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/barabasi_albert_res.png)
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/barabasi_albert_res_def.png)
+The crisp result is 0.65.  
 #### 6.4 Chung Lu model 
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/chung_lu_res.png)
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/chung_lu_res_def.png)
-##### 6.5 Simple Geometric Chung Lu model  
+The crisp result is 0.45.  
+##### 6.5 Geometric Chung Lu model  
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/geom_chung_lu_res.png)
 ![](https://github.com/kseniashilova/Fuzzy-Modeling/blob/main/geom_chung_lu_res_def.png)
-## 7. Conclusion
+The crisp result is 0.57.  
+## 7. Conclusion  
+The structural connectomes and other natural graphs is an extremely significant graphs for approximate program modeling and properties comparing. There are large number of models to generate random graphs. Many of them have been developed based on some properties of natural graphs derived from real life, however there is no fully suitable universal solution for this problem. In this paper was considered five models: Erdos-Renyi eandom graph, Geometric random graph, Barabasi-Albert random graph, Chung Lu random graph and Geometric Chung Lu random graph. Applying the fuzzy logic to problem of comparing the derived graphs to the reference graph of the drosophila medulla connectome (one of the most recent obtained connectomes), the models were compared. The most suitable model according our approach is the Chung Lu model (summary deffuzification relative error is 45%). Geometric graph and Geometric Chung Lu model produced approximately the same results of 56% and 57% for relative error. Erdos-Renyi and Barabasi-Albert random graphs have the aggregate relative erors of 61% and 65% respectively.  
+Talking about the expectations of the results, it was clear that the Chang Lu and Geometric Chang Lu models would struggle with each other. This was expected, because the models have repeatedly shown their superiority for generating graphs close to real ones. Generally speaking, it has been shown that the distance between nodes affects the weaking of the probability of an edge appearing between them, but for some reason geometric graphs with this property turned out to be slightly worse than the simple Chang Lu model. It is possible that if only topological characteristics were evaluated, the geometric graph would have proved itself, but in the case of complex estimates, this did not occur. Erdos-Renyi and Barabasi-Albert fulfilled expectations and were not precise enough. 
 ## References 
