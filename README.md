@@ -1,6 +1,6 @@
 # Fuzzy-Modeling
 
-Models definning and the experement: https://colab.research.google.com/drive/1R3xN1R1r6LasQB-Jk4K58Qilx7fRQqJ1?usp=sharing
+Models definning and the experiment: https://colab.research.google.com/drive/1R3xN1R1r6LasQB-Jk4K58Qilx7fRQqJ1?usp=sharing
 ## Abstract  
 Approximation of graphs obtained from real life is a very acute problem that can be solved by some models of random graph generation based on some pre-known properties. One of the most essential biological graphs is the structural connectome of the drosophila fly, namely its visual part. In this paper, we consider some models for generating random graphs based on the properties of a structural connectome. Then the models are compared to the reference graph according to some parameters, which makes it possible to identify the most suitable of them. In the future, the parameters for evaluation can be changed depending on the interest of researchers, but the approach using fuzzy logic allows to evaluate the graph generation model as close as possible to the graph of the structural connectome. 
 ## 1. Introduction  
